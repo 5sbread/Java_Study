@@ -26,8 +26,8 @@ public class Control2_ex2 {
 		
 		//소문자가 범위를 벗어났을 때 (아스키 코드)
 		if(result>'z') {
-			result = reslut - 'z' -1;
-			result = 'a' + result
+			result = result - 'z' -1;
+			result = 'a' + result;
 		}
 		
 		//대문자가 범위를 벗어났을 때 

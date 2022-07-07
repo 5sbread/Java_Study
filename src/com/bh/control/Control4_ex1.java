@@ -17,12 +17,9 @@ public class Control4_ex1 {
 		
 		System.out.println("영어 점수");
 		
-		 
+		  
 		
-		
-		
-		
-		
+		//~보다 큰것 -> if else가 더 편함
 	}
 
 }

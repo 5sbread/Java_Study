@@ -29,13 +29,13 @@ public class Control2_ex1 {
 			double tax4 = (double)(mon*0.007);
 			
 			result = mon - tax1 - tax2 - tax3 - tax4;
+			System.out.println("실수령금액은 " + result + "원 입니다.");
 			
-		}else(num==2) {
-		double result2 = (double)(mon*0.033);
-		}	
+		}else if(num==2) {
+		double result2 = (double)(mon*0.033);	
 		}
 		
-		System.out.println("실수령금액은 " + reslut + "원 입니다.");
+		
 
 	}
 

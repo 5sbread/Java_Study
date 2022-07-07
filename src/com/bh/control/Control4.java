@@ -18,12 +18,12 @@ public class Control4 {
 			//break 써도 되고 안써도 됨
 		}
 		
-		String select = "";
-		switch(select){
-		case "aaa";
+		String selec = "";
+		switch(selec){
+		case "aaa":
 			System.out.println("2일때 진행");
 			break;
-		case default
+		default:
 			System.out.println("그 외 진행");
 		case "abc":
 			System.out.println("1일 때 진행");
