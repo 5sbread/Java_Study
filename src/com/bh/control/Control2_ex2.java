@@ -24,6 +24,8 @@ public class Control2_ex2 {
 		ch = (char)(ch+num);
 		
 		System.out.println("ch : " +ch);
+		
+		//Study Edition
 
 	}
 
