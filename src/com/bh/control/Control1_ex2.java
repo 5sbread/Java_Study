@@ -28,6 +28,9 @@ public class Control1_ex2 {
 		String fin = "";
 		fin = number%2==0 ? "짝수입니다" : "홀수입니다";
 		System.out.println(fin);
+		
+		//깃허브 파일 수정 방법 공부중
+		//학원오면 fork에서 pull 먼저 하기
 
 		
 	}
