@@ -16,7 +16,7 @@ public class Loop4_ex2 {
 		int select=sc.nextInt();
 		
 		int inc = 3;
-		String sound "타타탕";
+		String sound = "타타탕";
 		
 		if(select==1) {
 			inc = 1;
@@ -27,10 +27,8 @@ public class Loop4_ex2 {
 			inc=1;
 			sound = "탕";
 		}
-		for(int b=0;b<30;b=b+ind) {
-			System.out.println(sound);
-		}
-		
+		for(int b=0;b<30;b=b+inc) {
+	
 		
 		
 //  ==============방식 2============		
@@ -89,7 +87,7 @@ public class Loop4_ex2 {
 		
 		
 	}
-}
+	}}
 
 
 //도구 고르기 1.돌 2.철 3.다이아
