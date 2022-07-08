@@ -26,16 +26,29 @@ public class Loop4_ex1 {
 		System.out.println(n+"분 "+d+"초");
 		System.out.println();
 		
+		
+		boolean flag = false;
+		
 		for(int m=0;m<60;m++) {
+			
 			for(int s=0;s<60;s++) {
-				if(s<=d) {
-					System.out.println(m + "분 : "+s+"초");
-				}else
-					break;
+				System.out.println(m + "분 : "+s+"초");
+				if(m==n && s==d) {
+					flag = !flag;
+					m=60; //if문이 true일 때 m=60 후 반복문을 빠져나옴 //코드2
+					      //32라인 반복문으로 돌아간 후 증감식 사용 -> m=61 for문 종료
+					break; //이중반복문의 경우 해당 반복문만 벗어남, 상위 반복문을 벗어나지 못함
+				}
 			}
-		break;	
+			
+//			if(flag) {   //코드 1
+//				break;
+			}
+			
 		}
+		
+		
 		
 	}
 
-}
+
