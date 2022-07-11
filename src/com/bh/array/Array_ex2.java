@@ -58,14 +58,26 @@ public class Array_ex2 {
 			if(g==1) { //switch case도 가능
 				for(int i=0;i<monsterPartyNames.length;i++) {
 					int damage = random.nextInt(magicPower);
-					monsterPartyHps[i] = monsterPartyHps[i] - damage ;
-					System.out.println("================");
-					System.out.println(name+" 님이 몬스터를 공격합니다.");
-					System.out.println("사용 스킬 : 파이어볼");
-					System.out.println("🦑=-🔥🔥🔥🔥🔥");
-					System.out.println("================");
-					System.out.println(monsterPartyNames[i]+" 공격에 성공했습니다.");
-					System.out.println("데미지 - "+damage+" | 남은 hp : "+monsterPartyHps[i] );
+					if(damage==0) {
+						monsterPartyHps[i] = monsterPartyHps[i] - damage ;
+						System.out.println("================");
+						System.out.println(name+" 님이 몬스터를 공격합니다.");
+						System.out.println("사용 스킬 : 파이어볼");
+						System.out.println("🦑=--");
+						System.out.println("================");
+						System.out.println(monsterPartyNames[i]+" 공격에 실패했습니다.");
+						System.out.println("데미지 - "+damage+" | 남은 hp : "+monsterPartyHps[i] );
+					}else {
+						monsterPartyHps[i] = monsterPartyHps[i] - damage ;
+						System.out.println("================");
+						System.out.println(name+" 님이 몬스터를 공격합니다.");
+						System.out.println("사용 스킬 : 파이어볼");
+						System.out.println("🦑=-🔥🔥🔥🔥🔥");
+						System.out.println("================");
+						System.out.println(monsterPartyNames[i]+" 공격에 성공했습니다.");
+						System.out.println("데미지 - "+damage+" | 남은 hp : "+monsterPartyHps[i] );
+					}	//남은 hp가 마이너스가 됨 / 0이면 공격안하게 하는 법
+					
 					
 					if(monsterPartyHps[i]<1) { //몬스터의 hp가 0이하이면 데스 카운트 1
 						System.out.println(name+" 님이 "+monsterNames[i]+" 을 처치했습니다.");
