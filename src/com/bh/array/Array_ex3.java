@@ -12,8 +12,8 @@ public class Array_ex3 {
 		boolean check = true;
 		
 		String [] names = null; //학생 이름 배열
-		int [] nums = null;
-		int []kors = null;
+		int [] nums = null; //지역 변수
+		int []kors = null; //나중에 값을 넣기 위해 null
 		int [] engs = null;
 		int [] maths = null;
 		int [] totals = null;
@@ -25,7 +25,7 @@ public class Array_ex3 {
 			System.out.println("1.학생정보 입력 | 2.학생정보 조회 | 3.학생정보 검색");
 			System.out.println("4.학생정보 삭제 | 5.학생정보 추가 | 6.프로그램 종료");
 			int select = sc.nextInt();
-			System.out.println(in+"번을 선택했습니다.");
+			System.out.println(select+"번을 선택했습니다.");
 			System.out.println();
 			
 				if(select==1) {
@@ -33,14 +33,14 @@ public class Array_ex3 {
 					// - 학생 수
 					// - 이름, 번호, 국어, 영어, 수학 입력 후 계산 총점, 평균
 					System.out.println("학생 수를 입력하세요.");
-					int select = sc.nextInt();
+					int s = sc.nextInt();
 					names = new String [select];
 					nums = new int[names.length];
 					kors = new int[names.length];
 					engs = new int[names.length];
 					maths = new int[names.length];
 					totals = new int[names.length];
-					avgs = new int[names.length];
+					avgs = new double[names.length];
 					
 					for(int i=0; i<names.length; i++) {
 						System.out.println(i+1+"번째 학생의 이름을 입력하세요.");
@@ -52,16 +52,17 @@ public class Array_ex3 {
 						System.out.println(i+1+"번째 학생의 영어 점수를 입력하세요.");
 						engs[i] = sc.nextInt();
 						System.out.println(i+1+"번째 학생의 수학 점수를 입력하세요.");
-						nmaths[i] = sc.nextInt();
+						maths[i] = sc.nextInt();
 					
-						totals[i] = kors[i+engs[i]+maths[i]
+						totals[i] = kors[i]+engs[i]+maths[i];
 						avgs[i]=totals[i]/3.0;
+
+						System.out.println("저장되었습니다.");
+						System.out.println("이름 : "+names[i]+" | 번호 : "+nums[i]);
+						System.out.println("국어 : "+kors[i]+" | 영어 : "+engs[i]+" | 수학 : "+maths[i]);
+						System.out.println("총합 : "+totals[i]+" | 평균 : "+avgs[i]);
 					} //for 끝	
 					
-					System.out.println("저장되었습니다.");
-					System.out.println("이름 : "+sName[innum]+" | 번호 : "+sNum[innum]);
-					System.out.println("국어 : "+sKor[innum]+" | 영어 : "+sEng[innum]+" | 수학 : "+sMath[innum]);
-					System.out.println("총합 : "+sTotal[innum]+" | 평균 : "+sAvg[innum]);
 					
 				}else if(select==2) {
 					//2. 정보 조회
@@ -70,7 +71,7 @@ public class Array_ex3 {
 						System.out.println("모든 학생의 정보를 출력합니다.");
 						System.out.println("이름\t번호\t총점\t평균");
 						for(int i=0; i<names.length; i++) {
-							System.out.println(names[i]+"\t"+nums[i]+"\t"+totals[i]+"\t"+avg[i]);
+							System.out.println(names[i]+"\t"+nums[i]+"\t"+totals[i]+"\t"+avgs[i]);
 						}//for
 					}else {
 						System.out.println("학생정보가 없습니다.");
@@ -134,7 +135,7 @@ public class Array_ex3 {
 						int index=0;
 						for(int j=0;j<names.length;j++) {
 							if(j==i) {
-								index--;
+								//index--;
 								continue;
 							}//if
 							namesCopy[index] = names[j];
