@@ -67,12 +67,14 @@ public class Array_ex3 {
 				}else if(select==2) {
 					//2. 정보 조회
 					// - 모든 학생의 이름, 번호, 총점, 평균 출력
-					if(names != null);{
+					if(names != null){
 						System.out.println("모든 학생의 정보를 출력합니다.");
 						System.out.println("이름\t번호\t총점\t평균");
 						for(int i=0; i<names.length; i++) {
 							System.out.println(names[i]+"\t"+nums[i]+"\t"+totals[i]+"\t"+avgs[i]);
 						}//for
+						System.out.println("출력이 완료되었습니다.");
+						
 					}else {
 						System.out.println("학생정보가 없습니다.");
 					}//else 학생정보 입력
@@ -87,9 +89,9 @@ public class Array_ex3 {
 					boolean flag = false; //
 					
 					for(int i=0; i<names.length; i++) {
-						if(select == nus[i]) {
+						if(select == nums[i]) {
 							System.out.println("이름\t번호\t총점\t평균");
-							System.out.println(names[i]+"\t"+nums[i]+"\t"+totals[i]+"\t"+avg[i]);
+							System.out.println(names[i]+"\t"+nums[i]+"\t"+totals[i]+"\t"+avgs[i]);
 							flag =! flag;
 							break;
 						}	
@@ -107,7 +109,7 @@ public class Array_ex3 {
 					// - 없으면 없다고 출력
 					System.out.println("삭제할 학생의 번호를 입력하세요.");
 					select = sc.nextInt();
-					boolean flag = flase;
+					boolean flag = false;
 					
 					String [] namesCopy = null;
 					int [] numsCopy = null;
@@ -115,7 +117,7 @@ public class Array_ex3 {
 					int [] engsCopy =null;
 					int [] mathsCopy = null;
 					int [] totalsCopy = null;
-					double [] avgCopy = null;
+					double [] avgsCopy = null;
 					
 					int i = 0;
 					for(i=0; i<names.length; i++) {
@@ -173,7 +175,7 @@ public class Array_ex3 {
 					int [] totalsCopy = new int [namesCopy.length];
 					double [] avgsCopy = new double [namesCopy.length];
 					
-					for(int i=0; i<names.length; i++);
+					for(int i=0; i<names.length; i++) {
 						namesCopy[i]=names[i]; //새로 만든 배열에 기존 데이터 복사
 						numsCopy[i]=nums[i];
 						korsCopy[i]=kors[i];
@@ -184,7 +186,7 @@ public class Array_ex3 {
 					}//for
 					
 					System.out.println("추가할 학생의 이름을 입력하세요.");
-					namesCopy[names.length] = sc.nextInt();
+					namesCopy[names.length] = sc.next();
 					System.out.println("추가할 학생의 번호를 입력하세요.");
 					numsCopy[names.length]=sc.nextInt();
 					System.out.println("추가할 학생의 국어 점수를 입력하세요.");
@@ -207,7 +209,7 @@ public class Array_ex3 {
 					System.out.println("학생이 추가되었습니다.");
 
 					
-				}else if(in==6) {
+				}else if(select==6) {
 					//6. 프로그램 좋료
 					System.out.println("프로그램을 종료합니다.");
 					check =! check;
